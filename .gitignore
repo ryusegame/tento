@@ -1,0 +1,22 @@
+# ==========================================
+# ルート .gitignore（サブディレクトリの .gitignore も併用される）
+# ==========================================
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 依存パッケージ
+node_modules/
+
+# 環境変数・機密情報（保険としてルートにも記載）
+.env
+.env.*
+!.env.example
+
+# Claude Code のローカル設定・作業メモ
+.claude/settings.local.json
+memory/
+
+# ログ・一時ファイル
+*.log
