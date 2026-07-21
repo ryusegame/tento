@@ -8,9 +8,10 @@ import { resetToLogin } from '../navigation/navigationRef';
 const TOKEN_KEY = 'auth_token';
 
 export const client = axios.create({
-  baseURL: 'http://localhost:8000/api',
+  // baseURL: 'http://localhost:8000/api',
   //実機テスト用
   //baseURL: 'http://192.168.151.46:8000/api',
+  baseURL: 'https://tento-production.up.railway.app/api',
   headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
 });
 
