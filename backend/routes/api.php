@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\BalanceController;
+use App\Http\Controllers\UserController;
 
 // APIルート定義。認証系のみ公開、それ以外は Sanctum トークン認証を必須とする。
 
@@ -17,6 +18,9 @@ Route::prefix('auth')->group(function () {
 // Sanctum認証必須
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('auth/logout', [AuthController::class, 'logout']);
+
+    // 自分自身のアカウントを削除（App Store 5.1.1(v) 対応）
+    Route::delete('user', [UserController::class, 'destroy']);
 
     Route::get('accounts', [AccountController::class, 'index']);
 

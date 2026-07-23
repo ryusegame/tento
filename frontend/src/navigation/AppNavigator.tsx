@@ -11,6 +11,7 @@ import TransactionInputScreen from '../screens/TransactionInputScreen';
 import TransactionListScreen from '../screens/TransactionListScreen';
 import TransactionDetailModal from '../screens/TransactionDetailModal';
 import BalanceScreen from '../screens/BalanceScreen';
+import SettingsScreen from '../screens/SettingsScreen';
 
 // アプリのナビゲーション定義。
 // 起動時のトークン有無でログイン画面／メインタブを切り替え、
@@ -65,6 +66,11 @@ function MainTabs({ navigation }: { navigation: any }) {
         name="Balance"
         component={BalanceScreen}
         options={{ title: '残高', tabBarLabel: '残高', tabBarIcon: () => <Text>💰</Text> }}
+      />
+      <Tab.Screen
+        name="Settings"
+        component={SettingsScreen}
+        options={{ title: '設定', tabBarLabel: '設定', tabBarIcon: () => <Text>⚙️</Text> }}
       />
     </Tab.Navigator>
   );
